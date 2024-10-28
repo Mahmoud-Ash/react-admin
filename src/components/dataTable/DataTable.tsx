@@ -43,7 +43,7 @@ const DataTable = (props: Props) => {
       return (
         <div className='actions'>
           <Link to={`/${props.route}/${params.row.id}`}>
-            <img src='/view.svg' alt='' />
+            <img src='view.svg' alt='' />
             {/* <EditNoteOutlined /> */}
           </Link>
           <div className='delete' onClick={() => handleDelete(params.row.id)}>
