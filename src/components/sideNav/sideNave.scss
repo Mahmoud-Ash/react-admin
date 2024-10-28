@@ -1,0 +1,48 @@
+@use "../../styles/variables" as *;
+@use "../../styles/responsive" as *;
+
+.sideNav {
+  display: flex;
+  flex-direction: column;
+  padding-inline: 10px;
+  gap: 5px;
+
+  @include sm {
+    display: none;
+  }
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    .title {
+      font-size: 12px;
+      font-weight: 200;
+      color: $soft-color;
+      text-transform: uppercase;
+
+      @include lg {
+        display: none;
+      }
+    }
+    .listItem {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      padding: 10px;
+      border-radius: 5px;
+
+      &:hover {
+        background-color: $main-bg;
+      }
+
+      .listItemTitle {
+        font-size: 10px;
+      }
+    }
+    .active {
+      background-color: $soft-bg;
+    }
+  }
+}

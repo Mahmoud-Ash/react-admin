@@ -1,0 +1,145 @@
+@use "../../styles/responsive" as *;
+@use "../../styles/variables" as *;
+
+.navbar {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  // justify-content: space-between;
+  align-items: center;
+  background-color: $transparent-bg;
+  backdrop-filter: blur(8px);
+  transition: top 0.3s linear;
+
+  .menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100vh;
+    padding-inline: 20px;
+    overflow-y: auto;
+    background-color: $soft-bg;
+    scrollbar-color: $dark-bg transparent;
+    scrollbar-width: thin;
+    transition: all 200ms ease-in-out;
+    display: flex;
+    flex-direction: column;
+
+    .brand {
+      font-weight: 600;
+      padding: 20px;
+      justify-self: flex-end;
+    }
+
+    .menuLogo {
+      position: sticky;
+      top: 0;
+      padding: 20px 0;
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      background-color: inherit;
+    }
+
+    .item {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+      .title {
+        font-size: 12px;
+        font-weight: 200;
+        color: $soft-color;
+        text-transform: uppercase;
+      }
+      .listItem {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+        border-radius: 5px;
+
+        &:hover {
+          background-color: $main-bg;
+        }
+      }
+      .active {
+        background-color: $dark-bg;
+      }
+    }
+  }
+
+  #check {
+    display: none;
+  }
+
+  #check:checked + .menu {
+    left: 0;
+  }
+
+  .ham-menu {
+    margin-inline: 10px;
+    cursor: pointer;
+  }
+  .logo {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    gap: 10px;
+  }
+  .icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    @include md {
+      gap: 10px;
+    }
+
+    .icon {
+      cursor: pointer;
+    }
+    .user {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      span {
+        @include sm {
+          display: none;
+        }
+      }
+      img {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 10px;
+        cursor: pointer;
+      }
+    }
+    .notifications {
+      position: relative;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      span {
+        display: grid;
+        place-items: center;
+        background-color: tomato;
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        padding-inline: 3px;
+        height: 16px;
+        font-size: 10px;
+        border-radius: 50%;
+      }
+    }
+  }
+}

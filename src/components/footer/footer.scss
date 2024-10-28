@@ -1,0 +1,24 @@
+@use "../../styles/responsive" as *;
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+
+  @include sm {
+    padding-bottom: 10px;
+  }
+  span {
+    &:first-child {
+      font-weight: bold;
+      margin-left: 90px;
+
+      @include sm {
+        margin-left: 0;
+      }
+    }
+    &:last-child {
+      font-size: 14px;
+    }
+  }
+}

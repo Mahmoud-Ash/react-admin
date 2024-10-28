@@ -1,0 +1,84 @@
+@use "../../styles/variables" as *;
+
+.add {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  background-color: rgba($color: #000000, $alpha: 0.724);
+
+  .modal {
+    padding: 40px;
+    border-radius: 10px;
+    background-color: $main-bg;
+    position: relative;
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+
+      &:hover {
+        background-color: red;
+      }
+    }
+
+    h2 {
+      margin-bottom: 40px;
+      color: $soft-color;
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      min-width: 500px;
+
+      .item {
+        grid-column: span 2;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        label {
+          font-size: 14px;
+        }
+
+        input {
+          padding: 10px;
+          background-color: transparent;
+          color: white;
+          outline: none;
+          border: 1px solid $soft-color;
+          border-radius: 3px;
+          transition: all 0.25s ease;
+
+          &:focus {
+            border-color: limegreen;
+          }
+        }
+      }
+      button {
+        padding: 10px;
+        border-radius: 3px;
+        border: 1px solid $soft-color;
+        grid-column: span 4;
+        cursor: pointer;
+        transition: all 0.25s ease;
+
+        &:hover {
+          border-color: limegreen;
+        }
+
+        &:active {
+          scale: 0.95;
+        }
+      }
+    }
+  }
+}

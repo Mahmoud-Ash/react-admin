@@ -1,0 +1,17 @@
+@use "../../styles/variables" as *;
+
+.notFound {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $dark-bg;
+  color: $main-color;
+  font-size: 2rem;
+
+  a {
+    color: limegreen;
+    font-weight: 600;
+  }
+}
