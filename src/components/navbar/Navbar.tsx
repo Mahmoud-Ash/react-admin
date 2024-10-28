@@ -3,6 +3,7 @@ import "./navbar.scss";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import { menu } from "../../data";
 import { Link, useLocation } from "react-router-dom";
+import { CloseRounded } from "@mui/icons-material";
 
 const Navbar = () => {
   const location = useLocation();
@@ -15,7 +16,7 @@ const Navbar = () => {
       <div className='menu'>
         <div className='menuLogo'>
           <label htmlFor='check'>
-            <MenuRoundedIcon className='ham-menu ' />
+            <CloseRounded className='ham-menu ' />
           </label>
           <div className='logo'>
             <img src='logo.svg' alt='' />

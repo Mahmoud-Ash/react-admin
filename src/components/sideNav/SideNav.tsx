@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import "./sideNave.scss";
+import "./sideNav.scss";
 import { menu } from "../../data";
 
 const MiniMenu = () => {

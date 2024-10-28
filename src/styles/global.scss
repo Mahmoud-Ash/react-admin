@@ -2,6 +2,8 @@
 @use "responsive" as *;
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
+$header-height: "60px";
+
 *,
 *::after,
 *::before {
@@ -28,22 +30,21 @@ a {
 
   .container {
     flex: 1;
-    height: 100vh;
+    height: 100%;
     padding-bottom: 20px;
     display: flex;
     align-items: flex-start;
     .menu-container {
       position: fixed;
-      padding-top: 75px;
-      height: 100vh;
+      height: calc(100% - 60px);
       overflow-y: auto;
       scrollbar-color: $soft-bg transparent;
       scrollbar-width: thin;
     }
     .content-container {
-      padding-top: 75px;
       flex: 1;
       padding-inline: 20px;
+      margin-top: 20px;
       margin-left: 90px;
       overflow: hidden;
 
